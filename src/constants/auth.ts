@@ -1,1 +1,1 @@
-export const ACCESS_TOKEN = "smallchat-access-token";
+export const ACCESS_TOKEN = 'smallchat-access-token';
