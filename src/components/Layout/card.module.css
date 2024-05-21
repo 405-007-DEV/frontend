@@ -1,0 +1,8 @@
+.card {
+  padding : 16px;
+  width : 320px;
+  height: 156px;
+  border-radius: 8px;
+  border: 1px solid var(--colors-gr1);
+  gap : 8px;
+}

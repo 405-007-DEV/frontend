@@ -72,6 +72,12 @@ body {
   place-items: center;
   min-width: 360px;
   min-height: 100vh;
+
+  /* 드래그 방지 */
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
 }
 
 button {
@@ -231,4 +237,3 @@ button:focus-visible {
   letter-spacing: 0px;
   line-height: 13px;
 }
-

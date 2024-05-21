@@ -1,0 +1,31 @@
+.active {
+  width: 320px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--colors-bp);
+  border-radius: 8px;
+  color : var(--accent-colors-w);
+  cursor: pointer;
+}
+
+.default {
+  width: 320px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--accent-colors-w);
+  border: 0.96px solid var(--colors-gr3);
+  color : var(--colors-bp);
+  cursor: pointer;
+}
+
+.disabled {
+  width: 320px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--colors-gr2);
+  border: 0.96px solid var(--colors-gr3);
+  color : var(--colors-gr3);
+}
