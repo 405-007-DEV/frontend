@@ -1,61 +1,64 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
-:root {
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  font-weight: 500;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@layer {
+  :root {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      sans-serif;
+    font-weight: 500;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    /* FONT */
+    --basic-font: Pretendard;
 
-  /* FONT */
-  --basic-font: Pretendard;
+    /* COLOR */
+    --colors-b1: #f0f6ff;
+    --colors-b2: #bdd7ff;
+    --colors-b3: #8ab9ff;
+    --colors-b4: #579aff;
+    --colors-bp: #227aff;
+    --colors-b5: #0060f0;
+    --colors-b6: #0045ad;
+    --colors-b7: #00378a;
+    --colors-b8: #002357;
 
-  /* COLOR */
-  --colors-b1: #F0F6FF;
-  --colors-b2: #BDD7FF;
-  --colors-b3: #8AB9FF;
-  --colors-b4: #579AFF;
-  --colors-bp: #227AFF;
-  --colors-b5: #0060F0;
-  --colors-b6: #0045AD;
-  --colors-b7: #00378A;
-  --colors-b8: #002357;
+    --colors-g1: #d4ffed;
+    --colors-g2: #85ffcd;
+    --colors-g3: #52ffb8;
+    --colors-g4: #1fffa2;
+    --colors-gs: #00e989;
+    --colors-g5: #00b86c;
+    --colors-g6: #00854e;
+    --colors-g7: #005230;
+    --colors-g8: #001f12;
 
-  --colors-g1: #D4FFED;
-  --colors-g2: #85FFCD;
-  --colors-g3: #52FFB8;
-  --colors-g4: #1FFFA2;
-  --colors-gs: #00E989;
-  --colors-g5: #00B86C;
-  --colors-g6: #00854E;
-  --colors-g7: #005230;
-  --colors-g8: #001F12;
+    --colors-gr1: #e9ebec;
+    --colors-gr2: #ced1d4;
+    --colors-gr3: #b3b7bc;
+    --colors-gr4: #989ea4;
+    --colors-gr5: #7c838b;
+    --colors-gr6: #656b72;
+    --colors-gr7: #4d5157;
+    --colors-gr8: #35383c;
+    --colors-grs: #1d1e20;
 
-  --colors-gr1: #E9EBEC;
-  --colors-gr2: #CED1D4;
-  --colors-gr3: #B3B7BC;
-  --colors-gr4: #989EA4;
-  --colors-gr5: #7C838B;
-  --colors-gr6: #656B72;
-  --colors-gr7: #4D5157;
-  --colors-gr8: #35383C;
-  --colors-grs: #1D1E20;
+    --accent-colors-w: #ffffff;
+    --accent-colors-pk: #fc84fc;
+    --accent-colors-y: #fece00;
+    --accent-colors-o: #ff7d25;
+    --accent-colors-p: #bb55ff;
+    --accent-coloers-r1: #ff8a8a;
+    --accent-colors-r2: #ff5757;
 
-  --accent-colors-w: #FFFFFF;
-  --accent-colors-pk: #FC84FC;
-  --accent-colors-y: #FECE00;
-  --accent-colors-o: #FF7D25;
-  --accent-colors-p: #BB55FF;
-  --accent-coloers-r1: #FF8A8A;
-  --accent-colors-r2: #FF5757;
+    --radius: 10px;
+  }
 }
-
 
 a {
   font-weight: 500;
@@ -66,14 +69,7 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0 20px;
-  display: flex;
-  place-items: center;
-  min-width: 360px;
-  min-height: 100vh;
-}
-
+/* 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -91,19 +87,33 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+} */
+
+@layer base {
+  /* * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  } */
+
+  body {
+    margin: 0 auto;
+    padding: 0 20px;
+    min-width: 360px;
+    max-width: 500px;
+    /* display: flex; */
+    /* place-items: center; */
+    /* border: 1px solid black; */
+    min-height: 100vh;
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.b1_bold {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 24px;
 }
 
 .h1_light {
@@ -231,4 +241,3 @@ button:focus-visible {
   letter-spacing: 0px;
   line-height: 13px;
 }
-
