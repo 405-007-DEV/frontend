@@ -14,9 +14,9 @@ const buttonVariants = cva(
         disabled: "border border-gr2 bg-gr1 text-gr3 b1_bold",
       },
       size: {
-        default: "h-14 px-4 py-2 rounded-md",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        default: "h-56 px-4 py-2 rounded-md",
+        sm: "h-58 rounded-md px-3",
+        lg: "h-60 rounded-md px-8",
         icon: "h-10 w-10",
       },
     },
