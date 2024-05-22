@@ -110,18 +110,17 @@ button:focus-visible {
   body {
     @apply bg-background text-foreground;
   } */
+}
 
-  body {
-    margin: 0 auto;
-    padding: 0 20px;
-    min-width: 360px;
-    max-width: 500px;
-    /* display: flex; */
-    /* place-items: center; */
-    /* border: 1px solid black; */
-    min-height: 100vh;
-    outline: 1px solid black;
-  }
+body {
+  margin: 0 auto;
+  /* padding: 0 20px; */
+  min-width: 360px;
+  max-width: 500px;
+  /* display: flex; */
+  /* place-items: center; */
+  /* height: 100vh; */
+  border: 1px solid black;
 }
 
 .b1_bold {
