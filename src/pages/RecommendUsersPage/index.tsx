@@ -12,6 +12,7 @@ export interface CardInfoProps {
     deepTalk: number;
     responsePercent: number;
   };
+  isBookmark: boolean;
 }
 
 export function RecommendUsersPage() {
@@ -67,7 +68,7 @@ export function RecommendUsersPage() {
       </p>
       <div>
         {mockUserList.map((item) => (
-          <UserCard {...item} />
+          <UserCard {...item} isBookmark={true} key={item.id} />
         ))}
       </div>
       <Link to="/">

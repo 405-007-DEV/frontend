@@ -3,14 +3,55 @@ import { Badge } from '../ui/badge';
 import { Card, CardContent } from '../ui/card';
 import { Icon, IconButton } from '../Button/Icon';
 import { ProfileImage } from '../ProfileImage';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { privateAxios } from '@/api/axiosInstance';
+
+const useHandleBookmarkMutation = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (isBookmark: boolean) =>
+      privateAxios.post('/api/mock/data', { isBookmark: isBookmark }),
+    onMutate: async (isBookmark) => {
+      // Cancel any outgoing refetches
+      // (so they don't overwrite our optimistic update)
+      await queryClient.cancelQueries({ queryKey: ['bookmarkUseros'] });
+
+      // Snapshot the previous value
+      const previousBookmark = queryClient.getQueryData(['bookmarkUser']);
+
+      // Optimistically update to the new value
+      queryClient.setQueryData(['bookmarkUser'], (old: boolean) => isBookmark);
+
+      // Return a context object with the snapshotted value
+      return { previousBookmark };
+    },
+    onError: (err, _, context: any) => {
+      queryClient.setQueryData(['bookmarkUser'], context.previousBookmark);
+    },
+
+    onSettled: async () => {
+      return await queryClient.invalidateQueries({
+        queryKey: ['bookmarkUser'],
+      });
+    },
+  });
+};
 
 export function UserCard(props: CardInfoProps) {
+  // TODO: optimistic update with useMutation after bookmarked
+
   return (
     <Card className="mb-16">
       <CardContent className="p-20">
         <div className="flex justify-between items-center mb-12">
           <Badge>{props.status}</Badge>
-          <IconButton icon="bookmark" />
+          <IconButton
+            icon={props.isBookmark ? 'bookmark_filled' : 'bookmark'}
+            onClick={() => {
+              // TODO: mutate 추가
+            }}
+          />
         </div>
         <div className="flex items-center">
           <div>
