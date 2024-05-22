@@ -1,3 +1,4 @@
+import { BottomBar } from '@/components/Bottom/BottomBar';
 import { UserCard } from '@/components/UserCard';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -59,7 +60,7 @@ export function RecommendUsersPage() {
   ];
 
   return (
-    <div className="pt-32">
+    <div className="pt-32 pb-164">
       <h2 className="h1_bold mb-16">나와 잘 어울리는 회원</h2>
       <p className="b1_light text-gr7 mb-32">
         테스트 결과를 바탕으로 내 성장을
@@ -71,9 +72,11 @@ export function RecommendUsersPage() {
           <UserCard {...item} isBookmark={true} key={item.id} />
         ))}
       </div>
-      <Link to="/">
-        <Button className="w-full">더 많은 회원 보기</Button>
-      </Link>
+      <BottomBar>
+        <Link to="/">
+          <Button className="w-full">더 많은 회원 보기</Button>
+        </Link>
+      </BottomBar>
     </div>
   );
 }
