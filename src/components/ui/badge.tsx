@@ -9,6 +9,8 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default: 'border-transparent text-b5 bg-[#ebf3ff]',
+        notification:
+          'rounded-[19px] bg-accent-r2 text-accent-w b4_bold py-0 border-none',
         // secondary:
         //   'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
         // destructive:

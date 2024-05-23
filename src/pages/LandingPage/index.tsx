@@ -10,7 +10,7 @@ export function LandingPage() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="pt-67 pb-64 flex flex-col justify-between h-full">
+    <section className="pt-67 pb-64 flex flex-col justify-between h-full px-20">
       <div className="ml-20">
         <Image image="logo" size={96} />
         <h2 className="h1_bold text-gr7 mt-20 mb-16">

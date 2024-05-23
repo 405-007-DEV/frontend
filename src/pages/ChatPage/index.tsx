@@ -5,17 +5,18 @@ const WS_URL = 'ws://127.0.0.1:8000';
 const username = 'hj';
 
 export function ChatPage() {
-  const { sendJsonMessage } = useWebSocket(WS_URL, {
-    queryParams: { username },
-  });
+  // MVP Spec out Web Socket
+  // const { sendJsonMessage } = useWebSocket(WS_URL, {
+  //   queryParams: { username },
+  // });
 
   return (
     <>
       <button
         onClick={() => {
-          sendJsonMessage({
-            message: 'hi',
-          });
+          // sendJsonMessage({
+          //   message: 'hi',
+          // });
         }}
       >
         보내기
