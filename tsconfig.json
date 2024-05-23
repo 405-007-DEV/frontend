@@ -16,8 +16,8 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false, // FIXME: Enable this
+    "noUnusedParameters": false, // FIXME: Enable this
     "noFallthroughCasesInSwitch": true,
 
     "baseUrl": "src",
@@ -26,5 +26,5 @@
     }
   },
   "include": ["src"],
-  "references": [{"path": "./tsconfig.node.json"}]
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

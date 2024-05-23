@@ -1,13 +1,13 @@
-import axios from "axios";
-import Cookies from "js-cookie";
-import {ACCESS_TOKEN} from "@/constants/auth";
-import {BASE_API_URL} from "@/constants/env";
-import {CustomInstance} from "./types";
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import { ACCESS_TOKEN } from '@/constants/auth';
+import { BASE_API_URL } from '@/constants/env';
+import { CustomInstance } from './types';
 
 const publicAxios: CustomInstance = axios.create({
   baseURL: BASE_API_URL,
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
   },
   withCredentials: true,
 });
@@ -18,13 +18,13 @@ publicAxios.interceptors.response.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );
 
 const privateAxios: CustomInstance = axios.create({
   baseURL: BASE_API_URL,
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
   },
   withCredentials: true,
 });
@@ -39,7 +39,7 @@ privateAxios.interceptors.request.use(
 
     return config;
   },
-  (error) => Promise.reject(error)
+  (error) => Promise.reject(error),
 );
 
-export {publicAxios, privateAxios};
+export { publicAxios, privateAxios };
