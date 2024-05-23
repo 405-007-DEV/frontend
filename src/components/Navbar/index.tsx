@@ -42,11 +42,8 @@ export function Navbar() {
     <nav className="fixed bottom-0 left-0 right-0 z-10 border-top-[1px] border-top-[#e7e7e7] max-w-[500px] mx-auto h-85">
       <ul className="flex items-center w-full h-full justify-around">
         {NAVBAR_LIST.map(({ location, activeIcon, inactiveIcon, text }) => (
-          <li>
-            <NavLink
-              to={location}
-              className="flex flex-col justify-center items-center space-y-2"
-            >
+          <NavLink to={location} className="w-full h-full">
+            <li className="flex flex-col h-full justify-center items-center space-y-2">
               <Icon
                 size={24}
                 icon={location === currentLocation ? activeIcon : inactiveIcon}
@@ -56,8 +53,8 @@ export function Navbar() {
               >
                 {text}
               </p>
-            </NavLink>
-          </li>
+            </li>
+          </NavLink>
         ))}
       </ul>
     </nav>
