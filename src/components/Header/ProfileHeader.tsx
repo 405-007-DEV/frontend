@@ -9,7 +9,7 @@ export function ProfileHeader({ title }: ProfileHeaderProps) {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full h-48 flex justify-between items-center px-20 py-11 border-[1px]">
+    <div className="w-full h-48 flex justify-between items-center px-20 py-11">
       <div
         onClick={() => {
           navigate(-1);
