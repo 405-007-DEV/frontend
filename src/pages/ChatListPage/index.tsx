@@ -48,7 +48,7 @@ export function ChatListPage() {
   return (
     <div className="h2_bold text-gr8 mt-9">
       {/* TODO: Change to tab with deep chat */}
-      <div className="w-full h-44 flex justify-between pr-16">
+      <div className="w-full h-44 flex justify-between pr-16 border-b-[1px] border-b-gr1">
         <div className="border-b-[2px] border-b-bp h-full w-86 px-20 pt-4">
           스몰챗
         </div>
