@@ -5,18 +5,23 @@ import {
   ChatPage,
   RecommendUsersPage,
   LandingPage,
+  ChatListPage,
 } from '../pages';
 import { Layout } from '../components/Layout';
 import { PrivateRoute } from './PrivateRoute';
 import { UIPage } from '@/pages/UIPage';
+import { Navbar } from '@/components/Navbar';
 
 export default function Router() {
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route element={<PrivateRoute />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/chat/:chat_room_id" element={<ChatPage />} />
+          <Route element={<Navbar />}>
+            <Route path="/chat/list" element={<ChatListPage />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/chat/:chat_room_id" element={<ChatPage />} />
+          </Route>
         </Route>
         <Route path="/start" element={<LandingPage />} />
         <Route path="/recommend/result" element={<RecommendUsersPage />} />
