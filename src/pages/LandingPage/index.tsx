@@ -1,3 +1,4 @@
+import { LoginBottomSheet } from '@/components/Bottom/LoginBottomSheet';
 import { Image } from '@/components/Image';
 import { Button } from '@/components/ui/button';
 import Router from '@/router/Router';
@@ -5,7 +6,7 @@ import { useState } from 'react';
 
 export function LandingPage() {
   // TODO: 로그인 여부에 따라 버튼 문구 조건부 노출
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -26,14 +27,28 @@ export function LandingPage() {
       </div>
       <div className="space-y-[8px]">
         <Button variant={'default'}>추천받으러 가기</Button>
-        <Button
-          variant={'outline'}
-          onClick={() => {
-            setIsOpen(true);
-          }}
-        >
-          {isLogin ? '나만의 추천 목록 보기' : '로그인'}
-        </Button>
+        {isLogin ? (
+          <Button
+            variant={'outline'}
+            onClick={() => {
+              setIsOpen(true);
+            }}
+          >
+            나만의 추천 목록 보기
+          </Button>
+        ) : (
+          <LoginBottomSheet>
+            <Button
+              className="!w-full"
+              variant={'outline'}
+              onClick={() => {
+                setIsOpen(true);
+              }}
+            >
+              로그인
+            </Button>
+          </LoginBottomSheet>
+        )}
       </div>
     </section>
   );
