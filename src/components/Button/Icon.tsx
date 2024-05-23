@@ -5,13 +5,7 @@ interface IconProps {
 
 export function Icon({ icon, size = 20 }: IconProps) {
   return (
-    <img
-      src={`/icons/${icon}.svg`}
-      width={size}
-      height={size}
-      alt="icon"
-      style={{ height: '20px' }}
-    />
+    <img src={`/icons/${icon}.svg`} width={size} height={size} alt="icon" />
   );
 }
 
