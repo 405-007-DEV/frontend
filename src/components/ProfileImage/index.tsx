@@ -14,7 +14,7 @@ const profileVariants = cva(
         default: 'h-64 w-64 rounded-full',
         sm: 'h-32 w-32 rounded-full',
         md: 'h-48 w-48 rounded-full',
-        lg: 'h-60 rounded-md px-8',
+        lg: 'h-120 w-120 rounded-full',
         icon: 'h-10 w-10',
       },
     },
