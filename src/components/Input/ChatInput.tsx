@@ -27,6 +27,13 @@ export function ChatInput({
         value={value}
         onChange={onChange}
         spellCheck={false}
+        onKeyUp={(e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+          if (e.key === 'Enter' && !e.shiftKey) {
+            onSubmit();
+            e.preventDefault();
+          }
+        }}
+        disabled={isSent}
       />
       <div onClick={onSubmit} className="cursor-pointer">
         <Icon icon="send" size={24} />
