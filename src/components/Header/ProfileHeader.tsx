@@ -1,15 +1,22 @@
 import { useNavigate } from 'react-router-dom';
 import { Icon } from '../Button/Icon';
+import { cn } from '@/lib/utils';
 
 interface ProfileHeaderProps {
   title: string;
+  className?: string;
 }
 
-export function ProfileHeader({ title }: ProfileHeaderProps) {
+export function ProfileHeader({ title, className }: ProfileHeaderProps) {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full h-48 flex justify-between items-center px-20 py-11">
+    <div
+      className={cn(
+        'w-full h-48 flex justify-between items-center px-20 py-11',
+        className,
+      )}
+    >
       <div
         onClick={() => {
           navigate(-1);
