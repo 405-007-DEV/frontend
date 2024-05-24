@@ -141,7 +141,7 @@ export function ChatPage() {
             );
           })}
       </div>
-      <BottomBar>
+      <BottomBar className="border-t-[1px] border-t-[#e7e7e7]">
         <ChatInput
           value={input}
           onChange={(value) => {
