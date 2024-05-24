@@ -101,7 +101,6 @@ export function ChatPage() {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
-        weekday: 'long',
       }),
       time: new Date().toLocaleTimeString('ko-KR', {
         hour: '2-digit',
