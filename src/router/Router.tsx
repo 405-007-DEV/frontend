@@ -22,8 +22,8 @@ export default function Router() {
           <Route element={<Navbar />}>
             <Route path="/chat/list" element={<ChatListPage />} />
             <Route path="/" element={<HomePage />} />
-            <Route path="/chat/:chat_room_id" element={<ChatPage />} />
           </Route>
+          <Route path="/chat/:chat_room_id" element={<ChatPage />} />
           <Route path="/profile/:user_id" element={<ProfilePage />} />
         </Route>
         <Route path="/start" element={<LandingPage />} />

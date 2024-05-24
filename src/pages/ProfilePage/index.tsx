@@ -2,7 +2,7 @@ import { BottomBar } from '@/components/Bottom/BottomBar';
 import { ProfileCard } from '@/components/Card/ProfileCard';
 import { ProfileHeader } from '@/components/Header/ProfileHeader';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const userData = {
   id: '1',
@@ -40,10 +40,16 @@ const userData = {
   ],
 };
 
+const userId = '1';
+
 export function ProfilePage() {
+  const currentLocation = useLocation().pathname;
+
+  const isMyProfile = currentLocation.split('/')[2] === userId;
+
   return (
     <>
-      <div className="space-y-36 pb-164">
+      <div className={`space-y-36 ${isMyProfile ? 'pb-24' : 'pb-164'}`}>
         <ProfileHeader title="회원 프로필" />
         <div className="px-20 space-y-36">
           <ProfileCard
@@ -101,12 +107,14 @@ export function ProfilePage() {
           </div>
         </div>
       </div>
-      <BottomBar>
-        {/* CHECK: chat route 설정 */}
-        <Link to={`/chat/${userData.id}`}>
-          <Button className="w-full">스몰챗 신청</Button>
-        </Link>
-      </BottomBar>
+      {currentLocation.split('/')[2] !== userId && (
+        <BottomBar>
+          {/* CHECK: chat route 설정 */}
+          <Link to={`/chat/${userData.id}`}>
+            <Button className="w-full">스몰챗 신청</Button>
+          </Link>
+        </BottomBar>
+      )}
     </>
   );
 }
