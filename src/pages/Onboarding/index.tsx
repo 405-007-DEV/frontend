@@ -1,11 +1,12 @@
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { FC, PropsWithChildren, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 import { safeSessionStorage } from '@toss/storage';
 import { onboardingQuestions } from '@/constants/onboarding';
 import clsx from 'clsx';
 import { useNavigate } from 'react-router-dom';
+import { calculateOnboardingResult } from '@/utils/onboarding';
+import { FadeUpMotion } from '@/components/Motion/FadeUpMotion';
 
 const OnboardingQuestion: FC<PropsWithChildren> = ({ children }) => {
   return (
@@ -50,27 +51,6 @@ const OnboardingItem: FC<PropsWithChildren<OnboardingItemProps>> = ({
   );
 };
 
-type OnboardingMotionProps = {
-  duration: number;
-  delay: number;
-};
-
-const OnboardingMotion: FC<PropsWithChildren<OnboardingMotionProps>> = ({
-  children,
-  duration,
-  delay,
-}) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration, delay }}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
 export function OnboardingPage() {
   const [cursor, setCursor] = useState(1);
   const [currentAnswer, setCurrentAnswer] = useState<number>(-1);
@@ -101,8 +81,7 @@ export function OnboardingPage() {
     // 4번일 때는 최종 결과 계산 후 결과 페이지로 이동
     if (cursor === 4) {
       // 온보딩 결과 계산
-      const result = 'A';
-      // const result = calculateOnboardingResult(newAnswers);
+      const result = calculateOnboardingResult(newAnswers);
 
       // 결과 이상 없으면 기본 처리
       setAnswers([]);
@@ -150,7 +129,7 @@ export function OnboardingPage() {
 
   return (
     <div className="px-20">
-      <OnboardingMotion duration={0.5} delay={0}>
+      <FadeUpMotion duration={0.5} delay={0}>
         <section className="w-full my-24">
           <Progress
             value={(cursor / 4) * 100}
@@ -158,23 +137,23 @@ export function OnboardingPage() {
             indicatorColor="var(--colors-b3)"
           />
         </section>
-      </OnboardingMotion>
+      </FadeUpMotion>
 
-      <OnboardingMotion duration={0.5} delay={0.2}>
+      <FadeUpMotion duration={0.5} delay={0.2}>
         <section className="mb-[35px]">
           <div className="b2_medium" aria-label={`Question ${cursor}`}>
             Q{cursor}
           </div>
         </section>
-      </OnboardingMotion>
+      </FadeUpMotion>
 
-      <OnboardingMotion duration={0.5} delay={0.2}>
+      <FadeUpMotion duration={0.5} delay={0.2}>
         <OnboardingQuestion>
           {onboardingQuestions[cursor - 1].question}
         </OnboardingQuestion>
-      </OnboardingMotion>
+      </FadeUpMotion>
 
-      <OnboardingMotion duration={0.5} delay={0.4}>
+      <FadeUpMotion duration={0.5} delay={0.4}>
         <section className="flex flex-col gap-20 mb-48">
           {onboardingQuestions[cursor - 1].answers.map((answer, idx) => (
             <OnboardingItem
@@ -187,7 +166,7 @@ export function OnboardingPage() {
             </OnboardingItem>
           ))}
         </section>
-      </OnboardingMotion>
+      </FadeUpMotion>
 
       {showError && (
         <div className="text-red-500 text-center mb-20 text-sm">
@@ -195,11 +174,11 @@ export function OnboardingPage() {
         </div>
       )}
 
-      <OnboardingMotion duration={0.5} delay={0.6}>
+      <FadeUpMotion duration={0.5} delay={0.6}>
         <Button variant={'default'} className="w-full" onClick={handleSubmit}>
           다음
         </Button>
-      </OnboardingMotion>
+      </FadeUpMotion>
     </div>
   );
 }
