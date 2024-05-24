@@ -2,7 +2,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Icon } from '../Button/Icon';
 
 const LOCATION = {
-  list: '/',
+  list: '/home',
   chat: '/chat/list',
   notification: '/notification',
   profile: (id: string) => `/profile/${id}`,

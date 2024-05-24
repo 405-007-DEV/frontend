@@ -22,12 +22,12 @@ export default function Router() {
         <Route element={<PrivateRoute />}>
           <Route element={<Navbar />}>
             <Route path="/chat/list" element={<ChatListPage />} />
-            <Route path="/" element={<HomePage />} />
+            <Route path="/home" element={<HomePage />} />
           </Route>
           <Route path="/chat/:chat_room_id" element={<ChatPage />} />
           <Route path="/profile/:user_id" element={<ProfilePage />} />
         </Route>
-        <Route path="/start" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/recommend/result" element={<RecommendUsersPage />} />
         <Route path="/ui" element={<UIPage />} />
         <Route path="/onboarding" element={<OnboardingPage />} />
