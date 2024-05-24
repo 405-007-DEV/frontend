@@ -144,8 +144,8 @@ export function ChatPage() {
       <BottomBar>
         <ChatInput
           value={input}
-          onChange={(e) => {
-            setInput(e.target.value);
+          onChange={(value) => {
+            setInput(value);
           }}
           isSent={isSent}
           onSubmit={() => handleSubmit(input)}
