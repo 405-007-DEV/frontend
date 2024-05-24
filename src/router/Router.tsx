@@ -6,6 +6,7 @@ import {
   RecommendUsersPage,
   LandingPage,
   ChatListPage,
+  OnboardingPage,
 } from '../pages';
 import { Layout } from '../components/Layout';
 import { PrivateRoute } from './PrivateRoute';
@@ -26,6 +27,7 @@ export default function Router() {
         <Route path="/start" element={<LandingPage />} />
         <Route path="/recommend/result" element={<RecommendUsersPage />} />
         <Route path="/ui" element={<UIPage />} />
+        <Route path="/onboarding" element={<OnboardingPage />} />
         <Route path="*" element={<EmptyPage />} />
       </Route>
     </Routes>
