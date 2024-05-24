@@ -187,3 +187,144 @@ export const onboardingQuestions: OnboardingQuestion[] = [
     ],
   },
 ];
+
+export type OnboardingResult = {
+  personality: string;
+  personality_en: string;
+  image: string;
+  image_alt: string;
+  description: React.ReactNode;
+};
+
+export const OnboardingResults: {
+  [key: string]: OnboardingResult;
+} = {
+  A: {
+    personality: '아이디어뱅크 유형',
+    personality_en: 'Idea Generator',
+    image: '/images/personality/a.png',
+    image_alt:
+      '보라색 캐릭터가 멋진 아이디어를 생각해내고 엄지 손가락을 들고 있습니다.',
+    description: (
+      <>
+        <span className="b1_bold">창의적이고 혁신적인 아이디어</span>를
+        <br />
+        창출해내는 멋진 능력을
+        <br />
+        가지고 있군요!
+      </>
+    ),
+  },
+  B: {
+    personality: '전략가 유형',
+    personality_en: 'Strategic Thinker',
+    image: '/images/personality/b.png',
+    image_alt:
+      '노란색 캐릭터가 한 손에는 연필과 포스트잇을, 다른 한 손에는 노트를 들고 전략을 세우고 있습니다.',
+    description: (
+      <>
+        장기적인 목표를 설정하고
+        <br />
+        <span className="b1_bold">전략적으로 계획을 세워 실행</span>하는
+        <br />
+        능력을 가지고 있군요!
+      </>
+    ),
+  },
+  C: {
+    personality: '논리적 분석가 유형',
+    personality_en: 'Logical Analyzer',
+    image: '/images/personality/c.png',
+    image_alt:
+      '주황색 캐릭터가 돋보기를 들고 차트를 보며 데이터를 분석하고 있습니다.',
+    description: (
+      <>
+        논리적인 접근으로 결론을 도출하고,
+        <br />
+        <span className="b1_bold">데이터를 중심으로</span> 사고하는
+        <br />
+        능력을 가지고 있군요!
+      </>
+    ),
+  },
+  D: {
+    personality: '팀 플레이어 유형',
+    personality_en: 'Team Player',
+    image: '/images/personality/d.png',
+    image_alt:
+      '초록색 캐릭터가 점프를 하며 팀워크를 중시하는 모습을 보여줍니다.',
+    description: (
+      <>
+        팀워크를 중시하며, <span className="b1_bold">협력을 통해</span>
+        <br />
+        함께 힘 모아 목표를 달성하는
+        <br />
+        능력을 가지고 있군요!
+      </>
+    ),
+  },
+  E: {
+    personality: '집중력 대장 유형',
+    personality_en: 'Focused Achiever',
+    image: '/images/personality/e.png',
+    image_alt:
+      '파란색 캐릭터가 엄지 손가락을 들고 웃는 표정을 짓고 있습니다. 배경에는 집중력을 나타내는 우상향하는 차트가 있습니다.',
+    description: (
+      <>
+        <span className="b1_bold">독립적으로 작업</span>하면서
+        <br />
+        스스로 목표를 설정하고
+        <br />
+        달성하는 능력을 가지고 있군요!
+      </>
+    ),
+  },
+  F: {
+    personality: '꾸준한 학습자 유형',
+    personality_en: 'Continuos Learner',
+    image: '/images/personality/f.png',
+    image_alt:
+      '파란색 캐릭터가 손을 들고 전구를 가리키고 있습니다. 지식을 습득했을 때 기뻐하는 모습을 전구 아이콘으로 표현했습니다.',
+    description: (
+      <>
+        성장의 비결은 꾸준함!
+        <br />
+        <span className="b1_bold">지속적인 학습과 성장을 중시</span>하는
+        <br />
+        꾸준한 학습자군요!
+      </>
+    ),
+  },
+  G: {
+    personality: '커뮤니티 활동가 유형',
+    personality_en: 'Community Builder',
+    image: '/images/personality/g.png',
+    image_alt:
+      '빨간색 캐릭터의 머리 위에 말풍선과 하트 아이콘이 그려져 있습니다. 커뮤니티 활동을 즐기는 모습을 표현했습니다.',
+    description: (
+      <>
+        <span className="b1_bold">사람들과의 네트워킹</span>을 통해
+        <br />
+        교류하며 기회를 만들어 나가는
+        <br />
+        능력을 가지고 있군요!
+      </>
+    ),
+  },
+  H: {
+    personality: '실행력 마스터 유형',
+    personality_en: 'Execution Master',
+    image: '/images/personality/h.png',
+    image_alt:
+      '빨간색 캐릭터가 계획을 세우고 실행하는 모습을 보여줍니다. 배경에는 체크리스트를 나타내는 그림이 있습니다.',
+    description: (
+      <>
+        <span className="b1_bold">계획을 세우고 실행</span>해서
+        <br />
+        목표를 달성해내는 멋진 능력을
+        <br />
+        가지고 있군요!
+      </>
+    ),
+  },
+};

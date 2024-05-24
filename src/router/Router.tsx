@@ -13,6 +13,7 @@ import { Layout } from '../components/Layout';
 import { PrivateRoute } from './PrivateRoute';
 import { UIPage } from '@/pages/UIPage';
 import { Navbar } from '@/components/Navbar';
+import { OnboardingResultPage } from '@/pages/OnboardingResult';
 
 export default function Router() {
   return (
@@ -30,6 +31,7 @@ export default function Router() {
         <Route path="/recommend/result" element={<RecommendUsersPage />} />
         <Route path="/ui" element={<UIPage />} />
         <Route path="/onboarding" element={<OnboardingPage />} />
+        <Route path="/onboarding/result" element={<OnboardingResultPage />} />
         <Route path="*" element={<EmptyPage />} />
       </Route>
     </Routes>
