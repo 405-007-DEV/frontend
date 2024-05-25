@@ -30,7 +30,7 @@ export const profileCardData = [
       },
     ],
     year: '15년+',
-    profileImg: '../../../../public/images/profile/profile_5.webp',
+    profileImg: '../../../../images/profile/profile_5.webp',
     isBookmark: false,
     topics: [
       '최근 관심있는 디자인 트렌드',
@@ -67,7 +67,7 @@ export const profileCardData = [
       },
     ],
     year: '10년+',
-    profileImg: '../../../../public/images/profile/profile_4.webp',
+    profileImg: '../../../../images/profile/profile_4.webp',
     isBookmark: false,
     topics: [
       '사용자 리서치 방법론',
@@ -104,7 +104,7 @@ export const profileCardData = [
       },
     ],
     year: '12년+',
-    profileImg: '../../../../public/images/profile/profile_1.webp',
+    profileImg: '../../../../images/profile/profile_1.webp',
     isBookmark: false,
     topics: [
       '데이터 기반 UX 디자인 전략',
@@ -141,7 +141,7 @@ export const profileCardData = [
       },
     ],
     year: '10년+',
-    profileImg: '../../../../public/images/profile/profile_2.webp',
+    profileImg: '../../../../images/profile/profile_2.webp',
     isBookmark: false,
     topics: [
       '사용자 중심 디자인 사고 방식',
@@ -178,7 +178,7 @@ export const profileCardData = [
       },
     ],
     year: '8년+',
-    profileImg: '../../../../public/images/profile/profile_3.webp',
+    profileImg: '../../../../images/profile/profile_3.webp',
 
     isBookmark: false,
     topics: [
