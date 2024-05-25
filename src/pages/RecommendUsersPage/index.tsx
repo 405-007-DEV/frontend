@@ -1,6 +1,7 @@
 import { BottomBar } from '@/components/Bottom/BottomBar';
 import { UserCard } from '@/components/Card';
 import { Button } from '@/components/ui/button';
+import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 export interface CardInfoProps {
   id: string;
@@ -13,10 +14,12 @@ export interface CardInfoProps {
     deepTalk: number;
     responsePercent: number;
   };
-  isBookmark: boolean;
+  isBookmark?: boolean;
+  onClick?: () => void;
+  extraContent?: ReactNode;
 }
 
-const mockUserList = [
+export const mockUserList = [
   {
     id: '1',
     name: 'Alex',

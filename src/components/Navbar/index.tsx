@@ -43,7 +43,7 @@ export function Navbar() {
   return (
     <>
       <Outlet />
-      <nav className="fixed bottom-0 left-0 right-0 z-10 border-t-[1px] border-t-[#e7e7e7] max-w-[500px] mx-auto h-85">
+      <nav className="bg-white fixed bottom-0 left-0 right-0 z-10 border-t-[1px] border-t-[#e7e7e7] max-w-[500px] mx-auto h-85">
         <ul className="flex items-center w-full h-full justify-around border-top-[1px] border-top-[#111010]s">
           {NAVBAR_LIST.map(({ location, activeIcon, inactiveIcon, text }) => (
             <NavLink

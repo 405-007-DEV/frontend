@@ -42,16 +42,21 @@ export function UserCard(props: CardInfoProps) {
   // TODO: optimistic update with useMutation after bookmarked
 
   return (
-    <Card className="mb-16">
+    <Card
+      className={`mb-16 ${props.onClick ? 'cursor-pointer' : ''}`}
+      onClick={props.onClick}
+    >
       <CardContent className="p-20">
         <div className="flex justify-between items-center mb-12">
           <Badge>{props.status}</Badge>
-          <IconButton
-            icon={props.isBookmark ? 'bookmark_filled' : 'bookmark'}
-            onClick={() => {
-              // TODO: mutate 추가
-            }}
-          />
+          {props.isBookmark !== undefined && (
+            <IconButton
+              icon={props.isBookmark ? 'bookmark_filled' : 'bookmark'}
+              onClick={() => {
+                // TODO: mutate 추가
+              }}
+            />
+          )}
         </div>
         <div className="flex items-center">
           <div>
@@ -74,6 +79,7 @@ export function UserCard(props: CardInfoProps) {
             />
           </div>
         </div>
+        {props.extraContent}
       </CardContent>
     </Card>
   );
