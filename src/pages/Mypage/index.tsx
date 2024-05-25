@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { OnboardingResults } from '@/constants/onboarding';
-import { Switch } from '@/components/ui/switch';
 
 const BlankSection = () => {
   return <div className="w-full h-8 bg-[#F5F5F5]"></div>;
@@ -25,10 +24,12 @@ export function Mypage() {
 
       <BlankSection />
 
-      <section className="flex justify-between px-20 py-35">
+      <section className="flex justify-between items-center px-20 py-35">
         <div className="b1_bold">프로필 공개</div>
 
-        <Switch color="blue" checked={true} />
+        <div className="w-56 h-30 bg-b2 rounded-full relative">
+          <div className="w-22 h-22 bg-white rounded-full absolute right-4 top-4"></div>
+        </div>
       </section>
 
       <BlankSection />
