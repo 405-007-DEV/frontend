@@ -13,13 +13,13 @@ export function Mypage() {
         <Link to="/profile/1">
           <div className="flex gap-8">
             <img
-              src="/images/example-profile.png"
+              src="../../../../images/profile/profile_3.webp"
               alt=""
-              className="w-40 h-40"
+              className="w-40 h-40 rounded-full"
             />
             <div>
-              <h2 className="h1_medium text-black">조현우</h2>
-              <div className="b4_light text-gr3">Back-End | 15년</div>
+              <h2 className="h1_medium text-black">서현주</h2>
+              <div className="b4_light text-gr3">UX Designer | 8년</div>
             </div>
           </div>
         </Link>
