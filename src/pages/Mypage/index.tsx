@@ -10,7 +10,7 @@ export function Mypage() {
   return (
     <div className="">
       <section className="flex justify-between items-center px-20 py-35">
-        <Link to="/profile/1">
+        <Link to="/profile/5">
           <div className="flex gap-8">
             <img
               src="../../../../images/profile/profile_3.webp"
