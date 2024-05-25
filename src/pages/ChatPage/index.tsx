@@ -5,37 +5,38 @@ import { ChatBox } from '@/components/Chat/ChatBox';
 import { ProfileHeader } from '@/components/Header/ProfileHeader';
 import { ChatInput } from '@/components/Input/ChatInput';
 import { recommendQuestions } from '@/constants/chat';
+import { userId } from '@/mock/data';
 import { useState } from 'react';
 
 const PROFILE_IMAGE =
   'https://cloudfour.com/examples/img-currentsrc/images/kitten-large.png';
-const mockData: { [key: string]: any } = {
-  notSend: {
-    chatHistory: [],
-    id: '2',
-    from: '서현주',
-    to: '조현우',
-    jobType: 'development',
-  },
-  sent: {
-    chatHistory: [
-      {
-        content:
-          '안녕하세요 최근에는 인공지능과 머신러닝 기술의 발전에 관심이 많습니다. 특히, 이 기술들을 어떻게 효율적으로 활용할 수 있을지 연구하고 있어요.',
-        id: '2',
-        from: '서현주',
-        profileImage:
-          'https://cloudfour.com/examples/img-currentsrc/images/kitten-large.png',
-        date: '2024년 5월 21일 화요일',
-        time: '오전 10:15',
-      },
-    ],
-    id: '2',
-    from: '서현주',
-    to: '조현우',
-    jobType: 'development',
-  },
-};
+// const mockData: { [key: string]: any } = {
+//   notSend: {
+//     chatHistory: [],
+//     id: '2',
+//     from: '서현주',
+//     to: '조현우',
+//     jobType: 'design',
+//   },
+//   sent: {
+//     chatHistory: [
+//       {
+//         content:
+//           '안녕하세요 최근에는 인공지능과 머신러닝 기술의 발전에 관심이 많습니다. 특히, 이 기술들을 어떻게 효율적으로 활용할 수 있을지 연구하고 있어요.',
+//         id: '2',
+//         from: '서현주',
+//         profileImage:
+//           'https://cloudfour.com/examples/img-currentsrc/images/kitten-large.png',
+//         date: '2024년 5월 21일 화요일',
+//         time: '오전 10:15',
+//       },
+//     ],
+//     id: '2',
+//     from: '서현주',
+//     to: '조현우',
+//     jobType: 'design',
+//   },
+// };
 
 interface DataType {
   chatHistory: {
@@ -54,18 +55,18 @@ interface DataType {
 
 const data: DataType = {
   chatHistory: [],
-  id: '2',
+  id: userId,
   from: '서현주',
   to: '조현우',
-  jobType: 'development',
+  jobType: 'design',
+};
+
+const user = {
+  id: userId,
+  name: '서현주',
 };
 
 export function ChatPage() {
-  const user = {
-    id: '2',
-    name: '서현주',
-  };
-
   const [chatHistory, setChatHistory] = useState(data.chatHistory);
 
   const [input, setInput] = useState('');

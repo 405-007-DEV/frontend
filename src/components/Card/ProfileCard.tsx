@@ -46,6 +46,7 @@ export function ProfileCard({
           <IconButton
             icon={isBookmark ? 'bookmark_filled' : 'bookmark'}
             // onClick={() => {}}
+            className="h-20"
           />
         </div>
 
