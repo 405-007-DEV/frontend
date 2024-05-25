@@ -6,6 +6,9 @@ import { SearchSelect } from '@/components/Select/SearchSelect';
 import { searchOptions } from '@/constants/searchOptions';
 import { positions } from '@/constants/positions';
 import { Badge } from '@/components/ui/badge';
+import { UserCard } from '@/components/Card';
+import { profileCardData, userId } from '@/mock/data';
+import { Button } from '@/components/ui/button';
 
 interface SearchContainerProps {}
 
@@ -46,7 +49,7 @@ export function SearchPage() {
           }}
         />
       </div>
-      {searchValues.nickname || (
+      {!searchValues.nickname && (
         <div className="flex items-center mt-32 gap-8 px-20">
           <SearchSelect
             value={searchFilters.jobs}
@@ -86,6 +89,47 @@ export function SearchPage() {
           )}
         </div>
       )}
+
+      <div className="px-20 mt-18">
+        {searchValues.position ? (
+          <p className="h1_bold text-grs mb-24">
+            {positions[searchValues.position][0]} 직군
+          </p>
+        ) : (
+          <></>
+        )}
+        {profileCardData
+          .filter((data) => data.id !== userId)
+          .map((item) => (
+            <UserCard
+              id={item.id}
+              name={item.name}
+              job={item.job}
+              intro={item.interest}
+              status={item.status}
+              info={item.info}
+              profileImage={item.profileImg}
+              key={item.id}
+              onClick={() => {
+                navigate(`/profile/${item.id}`);
+              }}
+              isBookmark={item.isBookmark}
+              extraContent={
+                <Button
+                  variant={'outline'}
+                  size="xs"
+                  className="border-bp mt-16 b3_bold"
+                  onClick={(e) => {
+                    navigate(`/chat/${item.id}`);
+                    e.stopPropagation();
+                  }}
+                >
+                  스몰챗 보내기
+                </Button>
+              }
+            />
+          ))}
+      </div>
     </div>
   );
 }
