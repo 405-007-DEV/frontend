@@ -5,8 +5,9 @@ import { ChatBox } from '@/components/Chat/ChatBox';
 import { ProfileHeader } from '@/components/Header/ProfileHeader';
 import { ChatInput } from '@/components/Input/ChatInput';
 import { recommendQuestions } from '@/constants/chat';
-import { userId } from '@/mock/data';
+import { profileCardData, userId } from '@/mock/data';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const PROFILE_IMAGE =
   'https://cloudfour.com/examples/img-currentsrc/images/kitten-large.png';
@@ -67,6 +68,10 @@ const user = {
 };
 
 export function ChatPage() {
+  const userId = useLocation().pathname.split('/')[2];
+
+  const name = profileCardData.find((data) => data.id == userId)?.name ?? '';
+
   const [chatHistory, setChatHistory] = useState(data.chatHistory);
 
   const [input, setInput] = useState('');
@@ -116,7 +121,7 @@ export function ChatPage() {
 
   return (
     <div>
-      <ProfileHeader title={data.to} />
+      <ProfileHeader title={name} />
       {user.id === data.id && !chatHistory.length && Questions}
       <div className="px-20 pt-20">
         {chatHistory.length > 0 &&
