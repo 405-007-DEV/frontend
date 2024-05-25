@@ -36,13 +36,16 @@ export function SearchSelect({
           />
         </SelectIcon>
       </SelectTrigger>
-      <SelectContent className="p-8 text-[#1d1d1d]">
+      <SelectContent className="p-8 text-[#1d1d1d] bg-white z-10">
         <SelectGroup>
           {items.map((item) => (
             <SelectItem
               key={item.value}
               value={item.value}
               className={`${item.value === value ? 'bg-b1 text-bp' : ''} cursor-pointer`}
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
             >
               {item.label}
             </SelectItem>
