@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/Button/Icon';
-import { positionList } from '@/constants/positionsList';
+import { positionList } from '@/constants/positions';
 
 const userData = [
   {

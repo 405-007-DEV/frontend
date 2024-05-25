@@ -6,3 +6,4 @@ export { LandingPage } from './LandingPage';
 export { ChatListPage } from './ChatListPage';
 export { OnboardingPage } from './Onboarding';
 export { ProfilePage } from './ProfilePage';
+export { SearchPage } from './SearchPage';

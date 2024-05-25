@@ -8,6 +8,7 @@ import {
   ChatListPage,
   OnboardingPage,
   ProfilePage,
+  SearchPage,
 } from '../pages';
 import { Layout } from '../components/Layout';
 import { PrivateRoute } from './PrivateRoute';
@@ -24,6 +25,7 @@ export default function Router() {
             <Route path="/chat/list" element={<ChatListPage />} />
             <Route path="/home" element={<HomePage />} />
           </Route>
+          <Route path="/search" element={<SearchPage />} />
           <Route path="/chat/:chat_room_id" element={<ChatPage />} />
           <Route path="/profile/:user_id" element={<ProfilePage />} />
         </Route>
