@@ -3,6 +3,7 @@ import { Image } from '@/components/Image';
 import { Button } from '@/components/ui/button';
 import Router from '@/router/Router';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export function LandingPage() {
   // TODO: 로그인 여부에 따라 버튼 문구 조건부 노출
@@ -26,7 +27,9 @@ export function LandingPage() {
         </p>
       </div>
       <div className="space-y-[8px]">
-        <Button variant={'default'}>추천받으러 가기</Button>
+        <Link to="/onboarding">
+          <Button variant={'default'}>추천받으러 가기</Button>
+        </Link>
         {isLogin ? (
           <Button
             variant={'outline'}
