@@ -11,6 +11,7 @@ import {
 import { PropsWithChildren } from 'react';
 import { Button } from '../ui/button';
 import { Icon, IconButton } from '../Button/Icon';
+import { Link } from 'react-router-dom';
 
 interface LoginBottomSheetProps extends PropsWithChildren {}
 
@@ -38,13 +39,16 @@ export function LoginBottomSheet({ children }: LoginBottomSheetProps) {
         <img src="/images/login_img.png" />
         <SheetFooter className="mt-50 mx-20">
           <SheetClose asChild>
-            <Button
-              className="space-x-18 text-gr6 b2_medium"
-              variant={'outline'}
-            >
-              <Icon size={20} icon="google" />
-              <span>Google로 스몰챗 시작하기</span>
-            </Button>
+            {/* FIXME: 로그인 API 연동 */}
+            <Link to="/home">
+              <Button
+                className="space-x-18 text-gr6 b2_medium"
+                variant={'outline'}
+              >
+                <Icon size={20} icon="google" />
+                <span>Google로 스몰챗 시작하기</span>
+              </Button>
+            </Link>
           </SheetClose>
         </SheetFooter>
       </SheetContent>

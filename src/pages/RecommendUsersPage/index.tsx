@@ -1,8 +1,8 @@
 import { BottomBar } from '@/components/Bottom/BottomBar';
+import { LoginBottomSheet } from '@/components/Bottom/LoginBottomSheet';
 import { UserCard } from '@/components/Card';
 import { Button } from '@/components/ui/button';
 import { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
 export interface CardInfoProps {
   id: string;
   name: string;
@@ -76,9 +76,9 @@ export function RecommendUsersPage() {
         ))}
       </div>
       <BottomBar>
-        <Link to="/">
+        <LoginBottomSheet>
           <Button className="w-full">더 많은 회원 보기</Button>
-        </Link>
+        </LoginBottomSheet>
       </BottomBar>
     </div>
   );
