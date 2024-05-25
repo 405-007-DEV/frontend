@@ -51,6 +51,8 @@ export function UserCard(props: CardInfoProps) {
           <Badge>{props.status}</Badge>
           {props.isBookmark !== undefined && (
             <IconButton
+              size={20}
+              className="h-20"
               icon={props.isBookmark ? 'bookmark_filled' : 'bookmark'}
               onClick={() => {
                 // TODO: mutate 추가
