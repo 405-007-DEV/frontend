@@ -61,7 +61,7 @@ export function UserCard(props: CardInfoProps) {
             />
           )}
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center justify-between">
           <div>
             <div className="flex items-center space-x-2">
               <p>{props.name}</p>
