@@ -72,9 +72,9 @@ export function Mypage() {
       <BlankSection />
 
       <section className="px-20 py-24">
-        <div className="b1_bold text-gr5 font-medium py-14 cursor-pointer">
-          로그아웃
-        </div>
+        <Link to="/">
+          <div className="b1_bold text-gr5 font-medium py-14">로그아웃</div>
+        </Link>
       </section>
     </div>
   );
