@@ -10,13 +10,19 @@ export function Mypage() {
   return (
     <div className="">
       <section className="flex justify-between items-center px-20 py-35">
-        <div className="flex gap-8">
-          <img src="/images/example-profile.png" alt="" className="w-40 h-40" />
-          <div>
-            <h2 className="h1_medium">조현우</h2>
-            <div className="b4_light text-gr3">Back-End | 15년</div>
+        <Link to="/profile/1">
+          <div className="flex gap-8">
+            <img
+              src="/images/example-profile.png"
+              alt=""
+              className="w-40 h-40"
+            />
+            <div>
+              <h2 className="h1_medium text-black">조현우</h2>
+              <div className="b4_light text-gr3">Back-End | 15년</div>
+            </div>
           </div>
-        </div>
+        </Link>
         <Button className="bg-gr7 w-90 h-32 b2_medium rounded-sm">
           프로필 수정
         </Button>
@@ -66,7 +72,9 @@ export function Mypage() {
       <BlankSection />
 
       <section className="px-20 py-24">
-        <div className="b1_bold text-gr5 font-medium py-14">로그아웃</div>
+        <div className="b1_bold text-gr5 font-medium py-14 cursor-pointer">
+          로그아웃
+        </div>
       </section>
     </div>
   );
