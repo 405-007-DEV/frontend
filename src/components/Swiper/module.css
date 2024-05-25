@@ -1,0 +1,9 @@
+.swiper-slide {
+  max-width: 231px;
+  height: 358px;
+}
+
+.swiper-pagination-bullet-active {
+  width: 29px;
+  border-radius: 6px;
+}

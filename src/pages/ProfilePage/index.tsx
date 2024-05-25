@@ -59,7 +59,6 @@ export function ProfilePage() {
             year={userData.year}
             info={userData.info}
             profileImg={userData.profileImg}
-            intro={userData.intro}
             isBookmark={userData.isBookmark}
             id={userData.id}
           />
