@@ -112,6 +112,11 @@ button:focus-visible {
   } */
 }
 
+html,
+* {
+  font-family: var(--basic-font);
+}
+
 body {
   /* margin: 0 auto; */
   /* padding: 0 20px; */
