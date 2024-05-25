@@ -6,7 +6,7 @@ const LOCATION = {
   list: '/home',
   chat: '/chat/list',
   // notification: '/notification',
-  profile: (id: string) => `/profile/${id}`,
+  profile: '/mypage',
 };
 
 const NAVBAR_LIST = [
@@ -45,11 +45,7 @@ export function Navbar() {
       <nav className="bg-white fixed bottom-0 left-0 right-0 z-10 border-t-[1px] border-t-[#e7e7e7] max-w-[500px] mx-auto h-85">
         <ul className="flex items-center w-full h-full justify-around border-top-[1px] border-top-[#111010]s">
           {NAVBAR_LIST.map(({ location, activeIcon, inactiveIcon, text }) => (
-            <NavLink
-              to={typeof location === 'string' ? location : location(userId)}
-              className="w-full h-full"
-              key={text}
-            >
+            <NavLink to={location} className="w-full h-full" key={text}>
               <li className="flex flex-col h-full justify-center items-center space-y-2">
                 <Icon
                   size={24}
