@@ -5,7 +5,7 @@ import { userId } from '@/mock/data';
 const LOCATION = {
   list: '/home',
   chat: '/chat/list',
-  notification: '/notification',
+  // notification: '/notification',
   profile: (id: string) => `/profile/${id}`,
 };
 
@@ -22,12 +22,12 @@ const NAVBAR_LIST = [
     inactiveIcon: 'chat',
     text: '대화',
   },
-  {
-    location: LOCATION.notification,
-    activeIcon: 'notification_active',
-    inactiveIcon: 'notification',
-    text: '알람',
-  },
+  // {
+  //   location: LOCATION.notification,
+  //   activeIcon: 'notification_active',
+  //   inactiveIcon: 'notification',
+  //   text: '알람',
+  // },
   {
     location: LOCATION.profile,
     activeIcon: 'profile_active',
