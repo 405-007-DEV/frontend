@@ -72,11 +72,7 @@ export function UserCard(props: CardInfoProps) {
             </div>
           </div>
           <div>
-            <ProfileImage
-              src={
-                'https://cloudfour.com/examples/img-currentsrc/images/kitten-large.png'
-              }
-            />
+            <ProfileImage src={props.profileImage} />
           </div>
         </div>
         {props.extraContent}

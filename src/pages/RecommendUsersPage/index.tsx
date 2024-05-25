@@ -1,6 +1,7 @@
 import { BottomBar } from '@/components/Bottom/BottomBar';
 import { UserCard } from '@/components/Card';
 import { Button } from '@/components/ui/button';
+import { profileCardData } from '@/mock/data';
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 export interface CardInfoProps {
@@ -11,55 +12,13 @@ export interface CardInfoProps {
   status: string;
   info: {
     smallTalk: number;
-    deepTalk: number;
     responsePercent: number;
   };
   isBookmark?: boolean;
   onClick?: () => void;
   extraContent?: ReactNode;
+  profileImage: string;
 }
-
-export const mockUserList = [
-  {
-    id: '1',
-    name: 'Alex',
-    job: 'ux designer',
-    intro:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quidem tenetur qui',
-    status: '스몰톡가능',
-    info: {
-      smallTalk: 36,
-      deepTalk: 30,
-      responsePercent: 90,
-    },
-  },
-  {
-    id: '2',
-    name: 'Alex',
-    job: 'ux designer',
-    intro:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quidem tenetur qui',
-    status: 'on',
-    info: {
-      smallTalk: 36,
-      deepTalk: 30,
-      responsePercent: 90,
-    },
-  },
-  {
-    id: '3',
-    name: 'Alex',
-    job: 'ux designer',
-    intro:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quidem tenetur qui',
-    status: 'on',
-    info: {
-      smallTalk: 36,
-      deepTalk: 30,
-      responsePercent: 90,
-    },
-  },
-];
 
 export function RecommendUsersPage() {
   return (
@@ -71,8 +30,18 @@ export function RecommendUsersPage() {
         가장 잘 도와줄 회원을 추천해요
       </p>
       <div>
-        {mockUserList.map((item) => (
-          <UserCard {...item} isBookmark={true} key={item.id} />
+        {profileCardData.slice(0, 3).map((item) => (
+          <UserCard
+            id={item.id}
+            name={item.name}
+            job={item.job}
+            intro={item.interest}
+            status={item.status}
+            info={item.info}
+            profileImage={item.profileImg}
+            isBookmark={item.isBookmark}
+            key={item.id}
+          />
         ))}
       </div>
       <BottomBar>

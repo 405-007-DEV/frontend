@@ -3,58 +3,13 @@ import { Swiper } from '@/components/Swiper/Swiper';
 import { Badge } from '@/components/ui/badge';
 import { useNavigate } from 'react-router-dom';
 import { SwiperSlide } from 'swiper/react';
-import { mockUserList } from '../RecommendUsersPage';
 import { UserCard } from '@/components/Card';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/Button/Icon';
 import { positionList } from '@/constants/positions';
-
-const userData = [
-  {
-    id: '1',
-    name: '조현우',
-    job: 'Back-end',
-    company: '세븐텐 회사',
-    info: {
-      smallTalk: 36,
-      responsePercent: 90,
-    },
-    year: '15년+',
-    profileImg:
-      'https://cloudfour.com/examples/img-currentsrc/images/kitten-large.png',
-    isBookmark: false,
-  },
-  {
-    id: '2',
-    name: '조현우',
-    job: 'Back-end',
-    company: '세븐텐 회사',
-    info: {
-      smallTalk: 36,
-      responsePercent: 90,
-    },
-    year: '15년+',
-    profileImg:
-      'https://cloudfour.com/examples/img-currentsrc/images/kitten-large.png',
-    isBookmark: false,
-  },
-  {
-    id: '3',
-    name: '조현우',
-    job: 'Back-end',
-    company: '세븐텐 회사',
-    info: {
-      smallTalk: 36,
-      responsePercent: 90,
-    },
-    year: '15년+',
-    profileImg:
-      'https://cloudfour.com/examples/img-currentsrc/images/kitten-large.png',
-    isBookmark: false,
-  },
-];
+import { profileCardData, userId } from '@/mock/data';
 
 export function HomePage() {
   const navigate = useNavigate();
@@ -84,7 +39,7 @@ export function HomePage() {
             </button>
           </div>
           <Swiper>
-            {userData.map((item) => (
+            {profileCardData.slice(0, 3).map((item) => (
               <SwiperSlide
                 onClick={() => {
                   navigate(`/profile/${item.id}`);
@@ -158,28 +113,37 @@ export function HomePage() {
 
         <div className="px-20">
           <h3 className="h1_bold text-grs mb-24">더 많은 회원</h3>
-          {mockUserList.map((item) => (
-            <UserCard
-              {...item}
-              key={item.id}
-              onClick={() => {
-                navigate(`/profile/${item.id}`);
-              }}
-              extraContent={
-                <Button
-                  variant={'outline'}
-                  size="xs"
-                  className="border-bp mt-16"
-                  onClick={(e) => {
-                    navigate(`/chat/${item.id}`);
-                    e.stopPropagation();
-                  }}
-                >
-                  스몰챗 보내기
-                </Button>
-              }
-            />
-          ))}
+          {profileCardData
+            .filter((data) => data.id !== userId)
+            .map((item) => (
+              <UserCard
+                id={item.id}
+                name={item.name}
+                job={item.job}
+                intro={item.interest}
+                status={item.status}
+                info={item.info}
+                profileImage={item.profileImg}
+                key={item.id}
+                onClick={() => {
+                  navigate(`/profile/${item.id}`);
+                }}
+                isBookmark={item.isBookmark}
+                extraContent={
+                  <Button
+                    variant={'outline'}
+                    size="xs"
+                    className="border-bp mt-16 b3_bold"
+                    onClick={(e) => {
+                      navigate(`/chat/${item.id}`);
+                      e.stopPropagation();
+                    }}
+                  >
+                    스몰챗 보내기
+                  </Button>
+                }
+              />
+            ))}
         </div>
       </div>
     </>

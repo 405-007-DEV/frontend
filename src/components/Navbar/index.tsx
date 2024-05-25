@@ -1,5 +1,6 @@
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Icon } from '../Button/Icon';
+import { userId } from '@/mock/data';
 
 const LOCATION = {
   list: '/home',
@@ -36,8 +37,6 @@ const NAVBAR_LIST = [
 ];
 
 export function Navbar() {
-  const userId = '1';
-
   const currentLocation = useLocation().pathname;
 
   return (
