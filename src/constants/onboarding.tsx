@@ -194,6 +194,7 @@ export type OnboardingResult = {
   image: string;
   image_alt: string;
   description: React.ReactNode;
+  description_text?: string;
 };
 
 export const OnboardingResults: {
@@ -214,6 +215,8 @@ export const OnboardingResults: {
         가지고 있군요!
       </>
     ),
+    description_text:
+      '창의적이고 혁신적인 아이디어를 창출해내는 멋진 능력을 가지고 있군요!',
   },
   B: {
     personality: '전략가 유형',

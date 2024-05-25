@@ -5,6 +5,7 @@ import { Icon, IconButton } from '../Button/Icon';
 import { ProfileImage } from '../ProfileImage';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { privateAxios } from '@/api/axiosInstance';
+import { LoginBottomSheet } from '../Bottom/LoginBottomSheet';
 
 const useHandleBookmarkMutation = () => {
   const queryClient = useQueryClient();
@@ -66,11 +67,14 @@ export function UserCard(props: CardInfoProps) {
               <p>{props.name}</p>
               <Icon icon="verified" size={12} />
               <p className="text-gr3 b4_light">{props.job}</p>
+
             </div>
-            <p className="text-[#747474] mb-10">{props.intro}</p>
-            <div className="text-gr4 b4_light">
-              <span>스몰톡 {props.info.smallTalk}회 </span> ·{' '}
-              <span>응답률 {props.info.responsePercent}%</span>·
+            <div>
+              <ProfileImage
+                src={
+                  'https://cloudfour.com/examples/img-currentsrc/images/kitten-large.png'
+                }
+              />
             </div>
           </div>
           <div>
