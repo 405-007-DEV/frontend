@@ -1,4 +1,5 @@
 import { BottomBar } from '@/components/Bottom/BottomBar';
+import { LoginBottomSheet } from '@/components/Bottom/LoginBottomSheet';
 import { UserCard } from '@/components/Card';
 import { Button } from '@/components/ui/button';
 import { profileCardData } from '@/mock/data';
@@ -31,17 +32,18 @@ export function RecommendUsersPage() {
       </p>
       <div>
         {profileCardData.slice(0, 3).map((item) => (
-          <UserCard
-            id={item.id}
-            name={item.name}
-            job={item.job}
-            intro={item.interest}
-            status={item.status}
-            info={item.info}
-            profileImage={item.profileImg}
-            isBookmark={item.isBookmark}
-            key={item.id}
-          />
+          <LoginBottomSheet key={item.id}>
+            <UserCard
+              id={item.id}
+              name={item.name}
+              job={item.job}
+              intro={item.interest}
+              status={item.status}
+              info={item.info}
+              profileImage={item.profileImg}
+              isBookmark={item.isBookmark}
+            />
+          </LoginBottomSheet>
         ))}
       </div>
       <BottomBar>
