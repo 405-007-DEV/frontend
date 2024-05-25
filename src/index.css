@@ -1,16 +1,77 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer {
+  :root {
+    font-family:
+      'Pretendard Variable',
+      Pretendard,
+      -apple-system,
+      BlinkMacSystemFont,
+      system-ui,
+      Roboto,
+      'Helvetica Neue',
+      'Segoe UI',
+      'Apple SD Gothic Neo',
+      'Noto Sans KR',
+      'Malgun Gothic',
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      'Segoe UI Symbol',
+      sans-serif;
+    font-weight: 500;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* FONT */
+    --basic-font: Pretendard;
+
+    /* COLOR */
+    --colors-b1: #f0f6ff;
+    --colors-b2: #bdd7ff;
+    --colors-b3: #8ab9ff;
+    --colors-b4: #579aff;
+    --colors-bp: #227aff;
+    --colors-b5: #0060f0;
+    --colors-b6: #0045ad;
+    --colors-b7: #00378a;
+    --colors-b8: #002357;
+
+    --colors-g1: #d4ffed;
+    --colors-g2: #85ffcd;
+    --colors-g3: #52ffb8;
+    --colors-g4: #1fffa2;
+    --colors-gs: #00e989;
+    --colors-g5: #00b86c;
+    --colors-g6: #00854e;
+    --colors-g7: #005230;
+    --colors-g8: #001f12;
+
+    --colors-gr1: #e9ebec;
+    --colors-gr2: #ced1d4;
+    --colors-gr3: #b3b7bc;
+    --colors-gr4: #989ea4;
+    --colors-gr5: #7c838b;
+    --colors-gr6: #656b72;
+    --colors-gr7: #4d5157;
+    --colors-gr8: #35383c;
+    --colors-grs: #1d1e20;
+
+    --accent-colors-w: #ffffff;
+    --accent-colors-pk: #fc84fc;
+    --accent-colors-y: #fece00;
+    --accent-colors-o: #ff7d25;
+    --accent-colors-p: #bb55ff;
+    --accent-coloers-r1: #ff8a8a;
+    --accent-colors-r2: #ff5757;
+
+    --radius: 10px;
+  }
 }
 
 a {
@@ -22,19 +83,7 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+/* 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -52,17 +101,157 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+} */
+
+@layer base {
+  /* * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  } */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+body {
+  margin: 0 auto;
+  /* padding: 0 20px; */
+  min-width: 360px;
+  max-width: 500px;
+  /* display: flex; */
+  /* place-items: center; */
+  /* height: 100vh; */
+  /* border: 1px solid black; */
+}
+
+.b1_bold {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 24px;
+}
+
+.h1_light {
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: -1px;
+  line-height: 28px;
+}
+
+.h1_medium {
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -1px;
+  line-height: 28px;
+}
+
+.h1_bold {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -1px;
+  line-height: 28px;
+}
+
+.h2_light {
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: -1px;
+  line-height: 26px;
+}
+
+.h2_medium {
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: -1px;
+  line-height: 26px;
+}
+
+.h2_bold {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -1px;
+  line-height: 26px;
+}
+
+.b1_light {
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 24px;
+}
+
+.b1_medium {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 24px;
+}
+
+.b1_bold {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0px;
+  line-height: 24px;
+}
+
+.b2_light {
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 20px;
+}
+
+.b2_medium {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 20px;
+}
+
+.b2_bold {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 20px;
+}
+
+.b3_light {
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0px;
+  line-height: 16px;
+}
+
+.b3_medium {
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0px;
+  line-height: 16px;
+}
+
+.b3_bold {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0px;
+  line-height: 16px;
+}
+
+.b4_light {
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 0px;
+  line-height: 13px;
+}
+
+.b4_medium {
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0px;
+  line-height: 13px;
+}
+
+.b4_bold {
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0px;
+  line-height: 13px;
 }
