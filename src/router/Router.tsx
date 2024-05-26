@@ -8,12 +8,14 @@ import {
   ChatListPage,
   OnboardingPage,
   ProfilePage,
+  SearchPage,
 } from '../pages';
 import { Layout } from '../components/Layout';
 import { PrivateRoute } from './PrivateRoute';
 import { UIPage } from '@/pages/UIPage';
 import { Navbar } from '@/components/Navbar';
 import { OnboardingResultPage } from '@/pages/OnboardingResult';
+import { Mypage } from '@/pages/Mypage';
 
 export default function Router() {
   return (
@@ -23,7 +25,9 @@ export default function Router() {
           <Route element={<Navbar />}>
             <Route path="/chat/list" element={<ChatListPage />} />
             <Route path="/home" element={<HomePage />} />
+            <Route path="/mypage" element={<Mypage />} />
           </Route>
+          <Route path="/search" element={<SearchPage />} />
           <Route path="/chat/:chat_room_id" element={<ChatPage />} />
           <Route path="/profile/:user_id" element={<ProfilePage />} />
         </Route>

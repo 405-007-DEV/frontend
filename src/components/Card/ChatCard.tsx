@@ -33,7 +33,6 @@ export function ChatCard({
           <p className="b3_light text-gr6 text-nowrap overflow-hidden text-ellipsis">
             {message}
           </p>
-          <Badge variant={'notification'}>1</Badge>
         </div>
       </div>
 
